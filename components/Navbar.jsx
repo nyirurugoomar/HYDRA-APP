@@ -32,16 +32,16 @@ function Navbar() {
               <Image src={Logo} className='w-[9rem] h-[5rem]'/>
             </Link>
             <ul style={{color: `${textcolor}`}} className='hidden  sm:flex'>
-                <li className='p-4'>
+                <li className='p-4 text-[12px]'>
                     <Link href='/'>ABOUT</Link>
                 </li>
-                <li className='p-4'>
+                <li className='p-4 text-[12px]'>
                     <Link href='/#gallery'>SERVICES</Link>
                 </li>
-                <li className='p-4'>
+                <li className='p-4 text-[12px]'>
                     <Link href='/portfolio'>TECHNOLOGIES</Link>
                 </li>
-                <li className='p-4'>
+                <li className='p-4 text-[12px]'>
                     <Link href='/contact'>HOW TO</Link>
                 </li>           
             </ul>
