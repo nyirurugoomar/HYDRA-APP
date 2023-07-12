@@ -1,8 +1,9 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import React,{useState,useEffect} from 'react'
-import {AiOutlineMenu,AiOutlineClose} from 'react-icons/ai'
+// import {AiOutlineMenu,AiOutlineClose} from 'react-icons/ai'
 import Logo from '../assets/LOGO.png'
+import hamburger from '../assets/Hamburger-Button.png'
 
 function Navbar() {
     const [nav,setNav] = useState(false)
@@ -43,23 +44,24 @@ function Navbar() {
                 </li>
                 <li className='p-4 text-[12px]'>
                     <Link href='/contact'>HOW TO</Link>
-                </li>           
-            </ul>
-            {/* button */}
-                <div className='flex'>
-                    <button className='border py-2 px-4 rounded-[30px] text-[12px] mx-4'>
+                </li>     
+                <div className='flex px-8 py-2'>
+                    <button className='border h-[2rem]  px-8 rounded-[30px] text-[11px] mx-4 '>
                         CONTACT US
                     </button> 
 
-                    <button className='border py-2 px-4 rounded-[30px] text-[12px] mx-4'>
+                    <button className=' px-8  h-[2rem] rounded-[30px] text-[11px] mx-4 bg-[#8D76AF] text-black'>
                         JOIN HYDRA
                     </button> 
                     
-                </div>
+                </div>      
+            </ul>
+            {/* button */}
+                
             
                       {/* mobile button */}
            <div onClick={handleNav} className='block sm:hidden z-10'>
-              {nav ? <AiOutlineClose size={20} style={{color: `${textcolor}`}}/> : <AiOutlineMenu size={20} style={{color: `${textcolor}`}}/>}
+              {nav ? <AiOutlineClose size={20} style={{color: `${textcolor}`}}/> : <Image src={hamburger} className='w-[3rem] h-[2rem]'  style={{color: `${textcolor}`}}/>}
            </div>
 
                     {/* mobile menu */}
@@ -69,17 +71,27 @@ function Navbar() {
                             }>
                 <ul>
                     <li className='p-4 text-4xl hover:text-gray-500'>
-                        <Link href='/'>Home</Link>
+                        <Link href='/'>About</Link>
                     </li>
                     <li className='p-4 text-4xl hover:text-gray-500'>
-                        <Link href='/#gallery'>Gallery</Link>
+                        <Link href='/'>Services</Link>
                     </li>
                     <li className='p-4 text-4xl hover:text-gray-500'>
-                        <Link href='/portfolio'>Work</Link>
+                        <Link href='/'>How To</Link>
                     </li>
                     <li className='p-4 text-4xl hover:text-gray-500'>
-                        <Link href='/contact'>Contant</Link>
-                    </li>           
+                        <Link href='/'>Contant</Link>
+                    </li>      
+                    <div className='flex px-8 py-2'>
+                    <button className='border h-[2rem]  px-8 rounded-[30px] text-[11px] mx-4 '>
+                        CONTACT US
+                    </button> 
+
+                    <button className=' px-8  h-[2rem] rounded-[30px] text-[11px] mx-4 bg-[#8D76AF] text-black'>
+                        JOIN HYDRA
+                    </button> 
+                    
+                </div>
                 </ul>
             </div>      
 
