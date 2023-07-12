@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import React,{useState,useEffect} from 'react'
-// import {AiOutlineMenu,AiOutlineClose} from 'react-icons/ai'
+import {AiOutlineClose} from 'react-icons/ai'
 import Logo from '../assets/LOGO.png'
 import hamburger from '../assets/Hamburger-Button.png'
 
@@ -17,8 +17,8 @@ function Navbar() {
     useEffect(()=>{ 
         function changeColor(){
             if(window.scrollY >=90){
-                setColor('#000000')
-                setTextColor('#000000')
+                setColor('transparent')
+                setTextColor('white')
             }else{
                 setColor('000000')
                 setTextColor('#ffffff')
@@ -32,36 +32,39 @@ function Navbar() {
             <Link href='/'>
               <Image src={Logo} className='w-[9rem] h-[5rem]'/>
             </Link>
-            <ul style={{color: `${textcolor}`}} className='hidden  sm:flex'>
-                <li className='p-4 text-[12px]'>
+            <ul style={{color: `${textcolor}`}} className='hidden  sm:flex '>
+                <li className='p-8 text-[12px] font-[700]'>
                     <Link href='/'>ABOUT</Link>
                 </li>
-                <li className='p-4 text-[12px]'>
-                    <Link href='/#gallery'>SERVICES</Link>
+                <li className='p-8 text-[12px] font-[700]'>
+                    <Link href='/'>SERVICES</Link>
                 </li>
-                <li className='p-4 text-[12px]'>
-                    <Link href='/portfolio'>TECHNOLOGIES</Link>
+                <li className='p-8 text-[12px] font-[700]'>
+                    <Link href='/'>TECHNOLOGIES</Link>
                 </li>
-                <li className='p-4 text-[12px]'>
-                    <Link href='/contact'>HOW TO</Link>
+                <li className='p-8 text-[12px] font-[700]'>
+                    <Link href='/'>HOW TO</Link>
                 </li>     
-                <div className='flex px-8 py-2'>
-                    <button className='border h-[2rem]  px-8 rounded-[30px] text-[11px] mx-4 '>
+                     
+            </ul>
+
+            <div className='hidden  sm:flex px-8 py-2'>
+                    <button className='border-2 h-[2rem]  px-8 rounded-[30px] text-[11px] mx-4 font-[700] '>
                         CONTACT US
                     </button> 
 
-                    <button className=' px-8  h-[2rem] rounded-[30px] text-[11px] mx-4 bg-[#8D76AF] text-black'>
+                    <button className=' px-8  h-[2rem] rounded-[30px] text-[11px] mx-4 bg-gradient-to-r from-[#8D76AF] to-[#C0B7E8] text-black font-[700]'>
+                
                         JOIN HYDRA
                     </button> 
                     
-                </div>      
-            </ul>
+                </div> 
             {/* button */}
                 
             
                       {/* mobile button */}
            <div onClick={handleNav} className='block sm:hidden z-10'>
-              {nav ? <AiOutlineClose size={20} style={{color: `${textcolor}`}}/> : <Image src={hamburger} className='w-[3rem] h-[2rem]'  style={{color: `${textcolor}`}}/>}
+              {nav ? <AiOutlineClose size={40} style={{color: `${textcolor}`}}/> : <Image src={hamburger} className='w-[3rem] h-[2rem]'  style={{color: `${textcolor}`}}/>}
            </div>
 
                     {/* mobile menu */}

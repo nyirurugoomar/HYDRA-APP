@@ -15,5 +15,21 @@ html {
 
 .bg-css{
   background-image: url("../assets/Header\ background.png");
+  
 
+}
+
+@media only screen and (max-width: 768px) {
+  .bg-css{
+    width: 30rem;
+  }
+}
+@media (min-width: 1024px) {
+  .bg-css{
+    width: 100px;
+  }
+}
+
+.spancolor{
+  color: gba(192, 183, 232, 1);
 }
